@@ -13,10 +13,12 @@
         {{ msg }}
     </div>
     <script>
+        //插值表达式里面可以写数字 表达式 boolean 不能写语句
         const vm = new Vue({
             el: '#app',
             data: {
-                msg: '你真好看'
+                msg: '你真好看',
+                name: 'pl'
             }
         })
     </script>
