@@ -13,15 +13,40 @@
         {{ msg }}
     </div>
     <script>
-        //插值表达式里面可以写数字 表达式 boolean 不能写语句
         const vm = new Vue({
             el: '#app',
             data: {
-                msg: '你真好看',
-                name: 'pl',
-                age: 20
+                msg: '邓哥：风姿绰约',
+                mrDeng: {
+                    name: '邓旭明',
+                    age: 88,
+                    height: '140cm'
+                }
             }
+        });
+        vm.msg = '花枝招展'
+        console.log(vm.msg, vm.$el.innerText)
+        vm.msg = '四季如春'
+        console.log(vm.msg, vm.$el.innerText)
+        vm.msg = '风流倜傥'
+        console.log(vm.msg, vm.$el.innerText)
+            // setTimeout(() => {
+            //     console.log(vm.msg, vm.$el.innerText)
+            // }, 0)
+        vm.$nextTick(function() {
+            console.log(this)
+            console.log(vm.msg, vm.$el.innerText)
         })
+        Vue.nextTick(function() {
+                console.log(this)
+                console.log(vm.msg, vm.$el.innerText)
+            })
+            // vm.$nextTick().then(() => {
+            //     console.log(vm.msg, vm.$el.innerText)
+            // })
+            // Vue.nextTick().then(() => {
+            //     console.log(vm.msg, vm.$el.innerText)
+            // })
     </script>
 </body>
 
